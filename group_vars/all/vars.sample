@@ -52,12 +52,16 @@ k8shosts:
   host_pools:
     - name: worker1
       host: 10.1.10.21
+      ephemeral_disks: /dev/sdc                # if you have more disks, you can pass with comma (,) separated
+      persistent_disks: /dev/sdb
     - name: worker2
       host: 10.1.10.22
+      ephemeral_disks: /dev/sdc
+      persistent_disks: /dev/sdb
     - name: worker3
       host: 10.1.10.23
-  ephemeral_disks: /dev/sdc                # if you have more disks, you can pass with comma (,) separated
-  persistent_disks: /dev/sdb
+      ephemeral_disks: /dev/sdc
+      persistent_disks: /dev/sdb
 
 gateway:
   gateway_set_hostname: gateway-node.v0010.gselr5.local

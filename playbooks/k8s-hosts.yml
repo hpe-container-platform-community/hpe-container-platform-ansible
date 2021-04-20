@@ -15,7 +15,7 @@
 ###
 ---
   - name: Ensure to cleanup ports and services before adding hosts.
-    hosts: k8sclusternodes
+    hosts: k8sclusternodes # Ensure that these nodes list in in sync with vars.yml under k8shosts.host_pools section.Otherwise you will have nodes with error state
     gather_facts: false
     roles:
       - role: k8s-hosts

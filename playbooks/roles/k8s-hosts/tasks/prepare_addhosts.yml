@@ -17,6 +17,9 @@
   - name: Seet the host ip variable
     set_fact:
       k8shost_ip: "{{ item.host }}"
+      ephemeral_disks: "{{ item.ephemeral_disks }}"
+      persistent_disks: "{{ item.persistent_disks }}"
+
   - name: Prepare yaml file for epicctl using template.
     template:
       src: k8shosts.j2
